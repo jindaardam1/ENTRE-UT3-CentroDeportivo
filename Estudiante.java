@@ -45,10 +45,17 @@ public class Estudiante {
      * (0, 1, 2 o 3)
      */
     public int totalNotas() {
-        //TODO
-        
-        
-        return 0;
+        int registradas = 0;
+        if (notaA != null) {
+            registradas++;
+        }
+        if (notaB != null) {
+            registradas++;
+        }
+        if (notaC != null) {
+            registradas++;
+        }        
+        return registradas;
     }
 
     /**
@@ -60,8 +67,7 @@ public class Estudiante {
      * Pista!! En este método se utilizará el método totalNotas()
      */
     public void registrarNotaUnidad(NotaEstudianteUnidad nota) {
-        //TODO
-
+        
     }
 
    
@@ -72,11 +78,7 @@ public class Estudiante {
      * objetos NotaEstudianteUnidad que se necesitan para calcular la nota final
      */
     public double calcularNotaFinalEstudiante() {
-       //TODO
-       
-       
        return 0;
-
     }
 
     /**
