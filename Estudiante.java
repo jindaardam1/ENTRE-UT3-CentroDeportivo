@@ -124,10 +124,21 @@ public class Estudiante {
      * Representación textual del estudiante (ver enunciado)
      */
     public String toString() {
-       //TODO
+       String str = "";
+       str += nombre + "\n";
+       str += "*".repeat(80) + "\n";
+       str += notaA.toString() + "\n\n";
+       str += notaB.toString() + "\n\n";
+       str += notaC.toString() + "\n\n";
+       if (calcularNotaFinalEstudiante() == -1) {
+           str += "No es posible calcular su nota final de evaluación, faltan notas por registrar.\n";
+       }
+       else {
+           str += "Nota final de evaluación: " + calcularNotaFinalEstudiante() + "\n";
+       }
+       str += "=".repeat(60) + "\n\n\n";
        
-       
-       return null;
+       return str;
     }
 
     /**

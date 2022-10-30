@@ -96,12 +96,13 @@ public class NotaEstudianteUnidad {
      * Representación textual del objeto (ver enunciado)
      */
     public String toString() {
-        System.out.printf("Controles: %6.2f", getNotaControles());
-        System.out.printf("    Actividades de clase: %6.2f", getNotaActividades());
-        System.out.printf("    Proyectos: %6.2f\n", getNotaProyectos());
-        System.out.printf("Nota obtenida en Unidad de trabajo: %6.2f\n", calcularNotaUnidad());
-        return "-".repeat(80);
-        
+        String str = "";
+        str += String.format("Controles: %6.2f", getNotaControles());
+        str += String.format("    Actividades de clase: %6.2f", getNotaActividades());
+        str += String.format("    Proyectos: %6.2f\n", getNotaProyectos());
+        str += String.format("Nota obtenida en Unidad de trabajo: %6.2f\n", calcularNotaUnidad());
+        str += "-".repeat(80);
+        return str;
     }
 
     /**
