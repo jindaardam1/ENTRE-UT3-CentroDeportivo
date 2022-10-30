@@ -106,7 +106,18 @@ public class Estudiante {
      * objetos NotaEstudianteUnidad que se necesitan para calcular la nota final
      */
     public double calcularNotaFinalEstudiante() {
-       return 0;
+       double sumaA;
+       double sumaB;
+       double sumaC;
+       if (totalNotas() != 3) {
+           return -1;
+       }
+       else {
+           sumaA = (notaA.getUnidad().getPesoUnidad() * notaA.calcularNotaUnidad()) / 100;
+           sumaB = (notaA.getUnidad().getPesoUnidad() * notaA.calcularNotaUnidad()) / 100;
+           sumaC = (notaA.getUnidad().getPesoUnidad() * notaA.calcularNotaUnidad()) / 100;
+       }
+       return sumaA + sumaB + sumaC;
     }
 
     /**
