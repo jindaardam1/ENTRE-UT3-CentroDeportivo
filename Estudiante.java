@@ -67,7 +67,35 @@ public class Estudiante {
      * Pista!! En este método se utilizará el método totalNotas()
      */
     public void registrarNotaUnidad(NotaEstudianteUnidad nota) {
-        
+        if (totalNotas() == 0) {
+            notaA = nota;
+        }
+        else if (totalNotas() == 1) {
+            notaB = nota;
+            if (notaB.getUnidad().getFechaFin().antesQue(notaA.getUnidad().getFechaFin())) {
+                NotaEstudianteUnidad tmp = notaA;
+                notaA = notaB;
+                notaB = tmp;
+            }
+        }
+        else if (totalNotas() == 2) {
+            notaC = nota;
+            if (notaC.getUnidad().getFechaFin().antesQue(notaB.getUnidad().getFechaFin()) && notaC.getUnidad().getFechaFin().antesQue(notaA.getUnidad().getFechaFin())) {
+                NotaEstudianteUnidad tmp1 = notaA;
+                NotaEstudianteUnidad tmp2 = notaB;
+                notaA = notaC;
+                notaB = tmp1;
+                notaC = tmp2;
+            }
+            else if (notaC.getUnidad().getFechaFin().antesQue(notaB.getUnidad().getFechaFin())) {
+                NotaEstudianteUnidad tmp = notaB;
+                notaB = notaC;
+                notaC = tmp;
+            }
+        }
+        else {
+            System.out.println("Error, no se puede introducir una nueva nota");
+        }
     }
 
    
