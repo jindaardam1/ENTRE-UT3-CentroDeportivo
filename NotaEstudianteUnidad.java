@@ -85,23 +85,23 @@ public class NotaEstudianteUnidad {
      * en cuenta la ponderación de los instrumentos de evaluación
      */
     public double calcularNotaUnidad() {
-         //TODO
-         
-         
-         return 0;
-
-
+        PonderacionInstrumentos pond = unidad.getPonderacion();
+        double notaUnidad = ((getNotaControles() * pond.getControles()) / 100) +
+        ((getNotaActividades() * pond.getActividades()) / 100) +
+        ((getNotaProyectos() * pond.getProyectos()) / 100);
+        return notaUnidad;
     }
 
     /**
      * Representación textual del objeto (ver enunciado)
      */
     public String toString() {
-        //TODO
+        System.out.printf("Controles: %6.2f", getNotaControles());
+        System.out.printf("    Actividades de clase: %6.2f", getNotaActividades());
+        System.out.printf("    Proyectos: %6.2f\n", getNotaProyectos());
+        System.out.printf("Nota obtenida en Unidad de trabajo: %6.2f\n", calcularNotaUnidad());
+        return "-".repeat(80);
         
-        
-        
-        return null;
     }
 
     /**
